@@ -44,7 +44,13 @@ class Paint(Frame):
                          command=lambda: self.set_color("red"))
         red_btn.grid(row=0, column=1)
 
-______________________________
+        black_btn = Button (self, text="Black", width=10,
+                            command=lambda: self.set_color("black"))
+        black_btn.grid (row=0, column=2)
+
+        white_btn = Button(self, text="White",
+                           command=lambda: self.set_color("white"),width=10)
+        white_btn.grid(row=0, column=3)
 
         clear_btn = Button(self, text="Clear all", width=10,
                            command=lambda: self.canv.delete("all"))
@@ -59,13 +65,10 @@ ______________________________
         two_btn = Button(self, text="Five", width=10,
                          command=lambda: self.set_brush_size(5))
         two_btn.grid(row=1, column=2)
-_________________________________
-
-
 
 def main():
     root = Tk()
     root.geometry("850x500+300+300")
     app = Paint(root)
     root.mainloop()
-
+main()
